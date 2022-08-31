@@ -3,7 +3,7 @@ package com.ime.dal;
 import java.sql.*;
 
 public class ConnectionModule {
-    //method to establish the connection with the DB
+    //Metodo para estabelecer a conexao com o MySql
     public static Connection connector() {
         java.sql.Connection connection = null;
         //driver to calls db driver
@@ -14,7 +14,9 @@ public class ConnectionModule {
         String password = "123456";
         //establish connection with db
         try {
+            //Metodo para fazer com que a classe seja carregada pela JVM
             Class.forName(driver);
+            //Criacao da conexao com o banco de dados
             connection = DriverManager.getConnection(url, user, password);
             return connection;
         } catch (Exception e) {
