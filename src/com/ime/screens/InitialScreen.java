@@ -36,7 +36,9 @@ public class InitialScreen {
         calcularButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null,"STATUS BD " + connection);
+                JOptionPane.showMessageDialog(null,"Origem: " + origemList.getSelectedItem() + "\n" +" Destino: " + destinoList.getSelectedItem());
+                System.out.println();
+                System.out.println(destinoList.getSelectedItem());
             }
         });
         origemList.addAncestorListener(new AncestorListener() {
@@ -77,7 +79,6 @@ public class InitialScreen {
                 }
 
             }
-
             @Override
             public void ancestorRemoved(AncestorEvent event) {
 
@@ -88,6 +89,7 @@ public class InitialScreen {
 
             }
         });
+
     }
 
 
