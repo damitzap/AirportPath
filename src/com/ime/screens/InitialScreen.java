@@ -17,7 +17,7 @@ public class InitialScreen {
     PreparedStatement pst = null;
     ResultSet rs = null; //show result of sql in app
 
-    private JPanel panel1;
+    public JPanel panel1;
     private JButton calcularButton;
 
     public InitialScreen() {
@@ -33,17 +33,4 @@ public class InitialScreen {
         });
     }
 
-
-    public static void main(String[] args) {
-            //configuração da interface gráfica
-
-
-            JFrame frame = new JFrame("Melhor caminho entre dois Aeroportos");
-            frame.setContentPane(new InitialScreen().panel1);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.pack();
-            frame.setVisible(true);
-
-
-    }
 }

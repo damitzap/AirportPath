@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67d6a6e4-335b-4a91-a729-f0c7b797b0e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AirportPath.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ime/dal/Airports.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ime/dal/ConnectionModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ime/screens/InitialScreen.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ime/screens/InitialScreen.java" afterDir="false" />
+    <list default="true" id="67d6a6e4-335b-4a91-a729-f0c7b797b0e7" name="Changes" comment="implementação da conexão com o mysql">
+      <change afterPath="$PROJECT_DIR$/src/com/ime/application/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ime/screens/InitialScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ime/screens/InitialScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +72,14 @@
       <option name="presentableId" value="Default" />
       <updated>1661302447859</updated>
     </task>
+    <task id="LOCAL-00001" summary="implementação da conexão com o mysql">
+      <created>1661396521523</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661396521524</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,6 +92,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="implementação da conexão com o mysql" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementação da conexão com o mysql" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
