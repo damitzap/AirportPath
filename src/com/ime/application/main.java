@@ -1,9 +1,8 @@
 package com.ime.application;
 
 import com.ime.screens.InitialScreen;
-
 import javax.swing.*;
-import com.ime.screens.InitialScreen;
+
 public class main {
     public static void main(String[] args) {
         //configuração da interface gráfica
