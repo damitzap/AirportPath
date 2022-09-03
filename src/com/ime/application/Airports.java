@@ -1,5 +1,10 @@
 package com.ime.application;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
 public class Airports {
     //Atributos dos Aeroportos
     private String iata; //Id do aeroporto
@@ -7,6 +12,24 @@ public class Airports {
     private String local;
     private double latitude;
     private double longitude;
+
+    private List<Airports> shortestPath = new LinkedList<>();
+
+    private Integer distance = Integer.MAX_VALUE;
+
+    public Integer getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Integer distance) {
+        this.distance = distance;
+    }
+
+    Map<Airports, Integer> adjacentNodes = new HashMap<>();
+
+    public void addDestination(Airports destination, int distance) {
+        adjacentNodes.put(destination, distance);
+    }
 
     //Metodos Get e Set para cada atributo da Classe Aeroporto
     public String getIata() {

@@ -1,16 +1,21 @@
 package com.ime.screens;
 
+import com.ime.algorithm.Distancia;
 import com.ime.application.Airports;
 import com.ime.dal.AirportsDal;
 import com.ime.dal.ConnectionModule;
 
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.sql.*;
 import javax.swing.*;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class InitialScreen {
     //Habilitar inteface com o Banco de dados
@@ -36,22 +41,26 @@ public class InitialScreen {
         calcularButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null,"Origem: " + origemList.getSelectedItem() + "\n" +" Destino: " + destinoList.getSelectedItem());
-                System.out.println();
-                System.out.println(destinoList.getSelectedItem());
+                //JOptionPane.showMessageDialog(null,"Origem: " + origemList.getSelectedItem() + "\n" +" Destino: " + destinoList.getSelectedItem());
+                AirportsDal airportsDal = new AirportsDal();
+                resultado.setText("Origem: "+ (String)origemList.getSelectedItem() +"\n"
+                                +"Destino: " + destinoList.getSelectedItem() +"\n"
+                                +"Distancia entre os aeroportos: "
+                        + new Distancia().distanceTo(airportsDal.getAirports().get(origemList.getSelectedItem()),airportsDal.getAirports().get(destinoList.getSelectedItem())) );
+
             }
         });
         origemList.addAncestorListener(new AncestorListener() {
             @Override
             public void ancestorAdded(AncestorEvent event) {
                 AirportsDal airportsDal = new AirportsDal();
-                List<Airports> airportsList = airportsDal.getAirports();
+                Map<String,Airports> airportsList = airportsDal.getAirports();
 
                 //limpar combobox
                 origemList.removeAll();
 
-                for(Airports a : airportsList){
-                    origemList.addItem(a.getIata());
+                for(Map.Entry<String,Airports> entry : airportsList.entrySet()){
+                    origemList.addItem(entry.getValue().getIata());
                 }
             }
 
@@ -69,13 +78,13 @@ public class InitialScreen {
             @Override
             public void ancestorAdded(AncestorEvent event) {
                 AirportsDal airportsDal = new AirportsDal();
-                List<Airports> airportsList = airportsDal.getAirports();
+                Map<String,Airports> airportsList = airportsDal.getAirports();
 
                 //limpar combobox
                 destinoList.removeAll();
 
-                for(Airports a : airportsList){
-                    destinoList.addItem(a.getIata());
+                for(Map.Entry<String,Airports> entry : airportsList.entrySet()){
+                    destinoList.addItem(entry.getValue().getIata());
                 }
 
             }
@@ -89,6 +98,7 @@ public class InitialScreen {
 
             }
         });
+
 
     }
 

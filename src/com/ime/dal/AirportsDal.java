@@ -3,7 +3,9 @@ import com.ime.application.Airports;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AirportsDal {
 //    Connection connection = null;
@@ -47,10 +49,10 @@ public class AirportsDal {
         }
     }
 
-    public List<Airports> getAirports(){
+    public Map<String,Airports> getAirports(){
         String sql = "SELECT * FROM  airports";
         //criacao de list para armazenar os dados dos aeroportos
-        List<Airports> airportsList = new ArrayList<Airports>();
+        Map<String,Airports> airportsList = new HashMap<>();
 
         Connection connection = null;
         PreparedStatement pstm = null;
@@ -78,7 +80,7 @@ public class AirportsDal {
                 //Recuperar a Longitude
                 airports.setLongitude(rset.getDouble("longitude"));
 
-                airportsList.add(airports);
+                airportsList.put(airports.getIata(), airports);
             }
         }catch (Exception  e){
             e.printStackTrace();
